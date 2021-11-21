@@ -1,6 +1,5 @@
 const notes = require('../db/db.json');
 const updateNotes = require('../update-notes');
-
 const router = require('express').Router();
 
 console.log(notes);
@@ -17,13 +16,14 @@ router.post('/notes', (req, res) => {
     res.status(200).json({ message: success });
 });
 
-router.delete('/api/notes/:id', (req, res) => {
+router.delete('/notes/:id', (req, res) => {
     let noteId = req.params.id;
-    for (let data in notes) {
-        if (notes[data].title == noteId) {
-            notes.splice(data, 1);
+    for (let j in notes) {
+        if (notes[j].title == noteId) {
+            notes.splice(j, 1);
         }
     }
+    res.json(notes);
 });
 
 module.exports = router;
