@@ -5,11 +5,11 @@ const router = require('express').Router();
 
 console.log(notes);
 
-router.get('/api/notes', (req, res) => {
+router.get('/notes', (req, res) => {
     res.status(200).json(notes);
 });
 
-router.post('/api/notes', (req, res) => {
+router.post('/notes', (req, res) => {
     notes.push(req.body);
 
     updateNotes(notes);
@@ -18,7 +18,12 @@ router.post('/api/notes', (req, res) => {
 });
 
 router.delete('/api/notes/:id', (req, res) => {
-    
+    let noteId = req.params.id;
+    for (let data in notes) {
+        if (notes[data].title == noteId) {
+            notes.splice(data, 1);
+        }
+    }
 });
 
 module.exports = router;
