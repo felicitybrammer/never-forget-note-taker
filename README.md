@@ -10,7 +10,7 @@ An application that allows users to create, save and delete persistent notes. Th
 
 ## Screenshot
 
-[!Screenshot](./screenshot.png)
+[!Screenshot](screenshot.png)
 
 ## Deployed Application
 
