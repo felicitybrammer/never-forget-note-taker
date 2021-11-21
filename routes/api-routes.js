@@ -13,7 +13,7 @@ router.post('/notes', (req, res) => {
 
     updateNotes(notes);
 
-    res.status(200).json({ message: success });
+    res.status(200).json({ message: 'success' });
 });
 
 router.delete('/notes/:id', (req, res) => {
